@@ -1,6 +1,3 @@
-
-An example react-redux-saga CRUD application
-
 # react-redux-crud
 
 An example CRUD application for managing blog posts. Built with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [Redux Saga](https://redux-saga.js.org/) on the client side. The REST API server was generated with [loopback.io](http://loopback.io/) and uses an in-memory database at runtime (persisting the models in a flat db.json file).
