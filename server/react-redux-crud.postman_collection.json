@@ -1,0 +1,137 @@
+{
+	"variables": [],
+	"info": {
+		"name": "react-redux-crud",
+		"_postman_id": "cf2b1931-4f14-053b-6bd3-63d85f1ff877",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET posts",
+			"request": {
+				"url": "http://localhost:3001/api/posts",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST posts",
+			"request": {
+				"url": "http://localhost:3001/api/posts",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Next blog post\",\n  \"body\": \"Some text here.\",\n}\n    "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE posts/5",
+			"request": {
+				"url": "http://localhost:3001/api/posts/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH posts/1",
+			"request": {
+				"url": "http://localhost:3001/api/posts/19",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Next blog post\",\n  \"body\": \"Some text here.\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET posts filtered",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3001/api/posts?filter[fields][title]=true&filter[fields][id]=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "filter[fields][title]",
+							"value": "true",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "filter[fields][id]",
+							"value": "true",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

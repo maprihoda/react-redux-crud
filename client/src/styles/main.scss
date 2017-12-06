@@ -1,0 +1,191 @@
+// just some quick styles
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.7rem;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: black;
+  line-height: 1.5;
+}
+
+.container {
+  width: 85rem;
+  padding: 0;
+  margin: 0 auto;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+}
+
+
+.header {
+  background-color: #eee;
+  padding: 1rem 0;
+  margin-bottom: 20px;
+
+  &__brand {
+    font-size: 4rem;
+  }
+}
+
+.posts-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+
+  &__title {
+    margin: 0 auto 12px 0;
+    padding: 0;
+  }
+}
+
+.posts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    padding: 12px 0;
+    border-bottom: 1px solid lightgrey;
+
+    &:first-child {
+      border-top: 1px solid lightgrey;
+    }
+
+    // &:hover {
+    //   background-color: #F5F5F5;
+    // }
+  }
+
+  &__title {
+    margin-right: auto;
+  }
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid grey;
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  line-height: 1;
+  cursor: pointer;
+  font-size: inherit;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    border: 1px solid grey;
+    outline: 0;
+  }
+
+  &:disabled {
+    color: lightgrey;
+    border: 1px solid lightgrey;
+    pointer-events: none;
+  }
+}
+
+.posts-heading__btn {
+  margin-left: 5px;
+}
+
+.posts__btn {
+  margin-left: 15px;
+  padding: 0;
+  border: none;
+
+  &:hover,
+  &:focus {
+    border: none;
+    outline: 0;
+  }
+}
+
+.form-error {
+  margin-bottom: 20px;
+  color: red;
+  background-color: #FFECEC;
+  padding: 10px 20px;
+}
+
+input,
+textarea {
+  font: inherit;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field-text {
+  // max-width: 60rem;
+}
+
+.field-text label {
+  cursor: pointer;
+}
+
+.field-text label,
+.field-text input,
+.field-text textarea {
+  width: 100%;
+}
+
+.field-text input {
+  padding: .375rem .3125rem .3125rem;
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+}
+
+.field-text input:focus,
+.field-text textarea:focus {
+  box-shadow: 0 0 .5rem rgba(93, 162, 248, 0.5);
+  border-color: #5da2f8;
+  outline: 0;
+}
+
+textarea {
+  height: 50rem;
+  resize: vertical;
+}
+
+.error-page {
+  h1 {
+    color: red;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
