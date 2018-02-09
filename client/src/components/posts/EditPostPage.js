@@ -7,7 +7,7 @@ import PostForm from './PostForm'
 
 class EditPostPage extends Component {
   handleSubmit = (payload) => {
-    const id = this.props.match.params.id
+    const { id } = this.props.post
     payload = { ...payload, id }
     this.props.dispatch({ type: UPDATE_POST, payload })
     navigateTo('/admin/posts')
