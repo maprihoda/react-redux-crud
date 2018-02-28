@@ -22,7 +22,7 @@ class ApiService {
     this.client = client
   }
 
-  get(path: string): Promise<Array<Object>> {
+  get(path: string): Promise<Object> | Promise<Array<Object>> {
     return this.client.get(path).then(response => response.data)
   }
 
@@ -30,7 +30,7 @@ class ApiService {
     return this.client.post(path, payload).then(response => response.data)
   }
 
-  patch(path: string, payload: Object) {
+  patch(path: string, payload: Object): Promise<Object> {
     return this.client.patch(path, payload).then(response => response.data)
   }
 

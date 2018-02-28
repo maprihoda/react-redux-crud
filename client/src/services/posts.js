@@ -1,10 +1,10 @@
 // @flow
 
-import type { Posts, Post } from '../types/posts'
+import type { Post, Posts } from '../types/posts'
 
 import service from './Api'
 
-export function fetchPostsFromApi(): Promise<Posts> {
+export function fetchPostsFromApi(): Promise<Post> | Promise<Posts> {
   return service.get('/posts')
 }
 
