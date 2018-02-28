@@ -4,7 +4,11 @@
     "es6": true
   },
   "parser": "babel-eslint",
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -12,7 +16,7 @@
     },
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "flowtype"],
   "rules": {
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
