@@ -1,6 +1,22 @@
-import React from 'react';
+// @flow
 
-export default function PostsHeading({ loading, posts, onNewPost, onReloadPosts }) {
+import React from 'react'
+
+import type { Posts } from '../../types/posts'
+
+type Props = {
+  loading: boolean,
+  posts: Posts,
+  onNewPost: () => void,
+  onReloadPosts: () => void
+}
+
+export default function PostsHeading({
+  loading,
+  posts,
+  onNewPost,
+  onReloadPosts
+}: Props) {
   return (
     <div>
       <div className="posts-heading">

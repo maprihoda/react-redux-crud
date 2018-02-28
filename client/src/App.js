@@ -11,12 +11,10 @@ export default function App() {
     <Router history={history}>
       <div>
         <Switch>
-          <Route exact path="/" render={() => (
-            <Redirect to="/admin"/>
-          )}/>
-          <Route path="/admin" component={AdminPage}/>
-          <Route path="/error" component={ErrorPage}/>
-          <Redirect to="/error"/>
+          <Route exact path="/" render={() => <Redirect to="/admin" />} />
+          <Route path="/admin" component={AdminPage} />
+          <Route path="/error" component={ErrorPage} />
+          <Redirect to="/error" />
         </Switch>
       </div>
     </Router>

@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
@@ -5,20 +7,22 @@ import { Provider } from 'react-redux'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer from './reducers'
 import rootSaga from './sagas'
-import DevTools from './components/DevTools'
 import App from './App'
-import 'normalize.css/normalize.css';
+import 'normalize.css/normalize.css'
 import 'font-awesome/css/font-awesome.min.css'
 import './styles/main.css'
+import type { Store } from './types'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const enhancer = compose(
-  applyMiddleware(sagaMiddleware),
-  DevTools.instrument()
-)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const enhancer = composeEnhancers(applyMiddleware(sagaMiddleware))
+const store: Store = createStore(rootReducer, enhancer)
 
-const store = createStore(rootReducer, enhancer)
+const element = document.getElementById('root')
+if (!element) {
+  throw new Error('couldn\'t find element with id root')
+}
 
 sagaMiddleware.run(rootSaga)
 
@@ -29,5 +33,5 @@ render(
       {/*<DevTools />*/}
     </div>
   </Provider>,
-  document.getElementById('root')
+  element
 )

@@ -1,7 +1,19 @@
-import React from 'react';
+// @flow
+
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function PostsList(props) {
+import type { Posts } from '../../types/posts'
+
+type Props = {
+  loading: boolean,
+  posts: Posts,
+  url: string,
+  onEditPost: (id: number) => void,
+  onDeletePost: (id: number) => void
+}
+
+export default function PostsList(props: Props) {
   const { loading, posts, url, onEditPost, onDeletePost } = props
 
   if (loading) return <p>Loading...</p>
@@ -9,13 +21,9 @@ export default function PostsList(props) {
 
   return (
     <ul className="posts">
-    {
-      posts.map(post => (
+      {posts.map(post => (
         <li className="posts__item" key={post.id}>
-          <Link
-            className="posts__title"
-            to={`${url}/${post.id}`}
-          >
+          <Link className="posts__title" to={`${url}/${post.id}`}>
             {post.title}
           </Link>
           <button
@@ -23,18 +31,17 @@ export default function PostsList(props) {
             onClick={() => onEditPost(post.id)}
             title="Edit"
           >
-            <i className="fa fa-pencil-square-o"></i>
+            <i className="fa fa-pencil-square-o" />
           </button>
           <button
             className="btn posts__btn"
             onClick={() => onDeletePost(post.id)}
             title="Delete"
           >
-            <i className="fa fa-trash-o"></i>
+            <i className="fa fa-trash-o" />
           </button>
         </li>
-      ))
-    }
+      ))}
     </ul>
   )
 }

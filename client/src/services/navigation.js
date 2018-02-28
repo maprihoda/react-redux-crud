@@ -1,5 +1,7 @@
+// @flow
+
 import history from './history'
 
-export default function navigateTo(path) {
-  history.push(path);
+export default function navigateTo(path: string) {
+  history.push(path)
 }

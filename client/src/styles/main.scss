@@ -5,7 +5,9 @@ html {
   font-size: 62.5%;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -41,7 +43,6 @@ a:hover {
 a:active {
   color: black;
 }
-
 
 .header {
   background-color: #eee;
@@ -136,7 +137,7 @@ a:active {
 .form-error {
   margin-bottom: 20px;
   color: red;
-  background-color: #FFECEC;
+  background-color: #ffecec;
   padding: 10px 20px;
 }
 
@@ -147,10 +148,6 @@ textarea {
 
 .field {
   margin-bottom: 20px;
-}
-
-.field-text {
-  // max-width: 60rem;
 }
 
 .field-text label {
@@ -164,14 +161,14 @@ textarea {
 }
 
 .field-text input {
-  padding: .375rem .3125rem .3125rem;
+  padding: 0.375rem 0.3125rem 0.3125rem;
   border: 1px solid #ccc;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 .field-text input:focus,
 .field-text textarea:focus {
-  box-shadow: 0 0 .5rem rgba(93, 162, 248, 0.5);
+  box-shadow: 0 0 0.5rem rgba(93, 162, 248, 0.5);
   border-color: #5da2f8;
   outline: 0;
 }
